@@ -1,8 +1,8 @@
-if ('win32' == process.platform) {
-	process.env.Path = process.env.Path + ';' + __dirname;
-} else {
-	process.env.LD_LIBRARY_PATH = process.env.LD_LIBRARY_PATH + ';' + __dirname;
-}
+// if ('win32' == process.platform) {
+	// process.env.Path = process.env.Path + ';' + __dirname;
+// } else {
+	// process.env.LD_LIBRARY_PATH = process.env.LD_LIBRARY_PATH + ';' + __dirname;
+// }
 const inst = require('./img.passoa');
 
 interface Options {

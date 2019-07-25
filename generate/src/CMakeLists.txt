@@ -17,19 +17,21 @@ ${PROJECT_SOURCE_DIR}/src/export.def
 ${PROJECT_SOURCE_DIR}/src/jpeg.cpp
 )
 install(FILES ${PROJECT_SOURCE_DIR}/stage/bin/turbojpeg.dll DESTINATION node_modules/img)
-
+target_link_libraries(img
+	turbojpeg-static
+)
 else()
 
 add_library(img SHARED
 ${PROJECT_SOURCE_DIR}/src/jpeg.cpp
 )
 install(FILES ${PROJECT_SOURCE_DIR}/stage/lib/libturbojpeg.so DESTINATION node_modules/img)
-
+target_link_libraries(img
+	libturbojpeg.a
+)
 endif()
 
-target_link_libraries(img
-	turbojpeg
-)
+
 
 install(TARGETS img
 	RUNTIME DESTINATION  node_modules/img
