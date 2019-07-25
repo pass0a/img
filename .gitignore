@@ -30,10 +30,10 @@
 \#*
 debug
 release
-output/
-stage/
+output
+stage
 modules/coverage
-build/
+build/*
 !build/*.bat
 binary/
 !.gitignore
