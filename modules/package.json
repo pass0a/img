@@ -1,0 +1,27 @@
+{
+	"name": "modules",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"build": "npm run clean && cd src && tsc",
+		"clean": "rimraf ../output/node_modules/img/*.js",
+		"nyc_out": "rimraf dist && rimraf .nyc_output && mkdirp .nyc_output && node copy.js ",
+		"pretest": "npm run nyc_out && nyc instrument test dist/test && nyc instrument src dist/src && tsc",
+		"test": "passoa node_modules/tape/bin/tape dist/test/*.test.js",
+		"posttest": "nyc report --reporter=text --reporter=html"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@passoa/tap": "^1.0.4",
+		"@types/node": "^12.6.8",
+		"typescript": "^3.5.3"
+	},
+	"devDependencies": {
+		"fs-extra": "^8.1.0"
+	}
+}
