@@ -27,11 +27,9 @@ ${PROJECT_SOURCE_DIR}/src/jpeg.cpp
 )
 install(FILES ${PROJECT_SOURCE_DIR}/stage/lib/libturbojpeg.so DESTINATION node_modules/img)
 target_link_libraries(img
-	libturbojpeg.a
+	turbojpeg
 )
 endif()
-
-
 
 install(TARGETS img
 	RUNTIME DESTINATION  node_modules/img
